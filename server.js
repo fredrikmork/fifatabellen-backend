@@ -1,5 +1,8 @@
-var express = require('express');
+import express from 'express';
+import sqlite from 'sqlite';
+
 var app = express();
+const dbPromise = sqlite.open('./db.sqlite', { Promise });
 
 app.get('/', function (req, res) {
    res.send('Hello World');
